@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const gm = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -16,7 +17,12 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+    fs.writeFile(fileName, data, (err) =>
+      err ? console.log(err) : console.log('Successfully created README.md!')
+     );
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -38,46 +44,42 @@ function init() {
           name: 'projectName',
           message: questions[2],
       },
-      {
-          type: 'input',
-          name: 'description',
-          message: questions[3],
-      },
-      {
-        type: 'list',
-        name: 'license',
-        message: questions[4],
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', "BSD 3", "None"],
-    },
-    {
-        type: 'input',
-        name: 'installation',
-        message: questions[5],
-    },
-    {
-        type: 'input',
-        name: 'test',
-        message: questions[6],
-    },
-    {
-        type: 'input',
-        name: 'information',
-        message: questions[7],
-    },
-    {
-        type: 'input',
-        name: 'contribution',
-        message: questions[8],
-    },
+    //   {
+    //       type: 'input',
+    //       name: 'description',
+    //       message: questions[3],
+    //   },
+    //   {
+    //     type: 'list',
+    //     name: 'license',
+    //     message: questions[4],
+    //     choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', "BSD 3", "None"],
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'installation',
+    //     message: questions[5],
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'test',
+    //     message: questions[6],
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'information',
+    //     message: questions[7],
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'contribution',
+    //     message: questions[8],
+    // },
   ])
   .then((answers) => {
-//     const htmlPageContent = generateHTML(answers);
+    const readmeContent = gm.generateMarkdown(answers);
+    writeToFile("README.md", readmeContent);
 
-//     fs.writeFile('index.html', htmlPageContent, (err) =>
-//       err ? console.log(err) : console.log('Successfully created index.html!')
-//     );
-//   });
-console.log(answers);
 })
 }
 // Function call to initialize app
