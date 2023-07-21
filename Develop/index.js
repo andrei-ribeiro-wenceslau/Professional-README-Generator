@@ -44,41 +44,41 @@ function init() {
           name: 'projectName',
           message: questions[2],
       },
-    //   {
-    //       type: 'input',
-    //       name: 'description',
-    //       message: questions[3],
-    //   },
-    //   {
-    //     type: 'list',
-    //     name: 'license',
-    //     message: questions[4],
-    //     choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', "BSD 3", "None"],
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'installation',
-    //     message: questions[5],
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'test',
-    //     message: questions[6],
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'information',
-    //     message: questions[7],
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'contribution',
-    //     message: questions[8],
-    // },
+      {
+          type: 'input',
+          name: 'description',
+          message: questions[3],
+      },
+      {
+          type: 'list',
+          name: 'license',
+          message: questions[4],
+          choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', "BSD 3", "None"],
+      },
+      {
+          type: 'input',
+          name: 'installation',
+          message: questions[5],
+      },
+      {
+          type: 'input',
+          name: 'test',
+          message: questions[6],
+      },
+      {
+          type: 'input',
+          name: 'information',
+          message: questions[7],
+      },
+      {
+          type: 'input',
+          name: 'contribution',
+          message: questions[8],
+      },
   ])
   .then((answers) => {
     const readmeContent = gm.generateMarkdown(answers);
-    writeToFile("README.md", readmeContent);
+    writeToFile("./generated_readme/README.md", readmeContent);
 
 })
 }
