@@ -6,9 +6,9 @@ Every good project needs a quality README with information about the app - what 
 
 This is a command-line application that runs with Node.js that dynamically generates a README.md file based on input about your project.
 
-![Website Screenshot](https://github.com/andrei-ribeiro-wenceslau/weather-dashboard/blob/main/assets/images/weather-dashboard-screenshot.png "Website Screenshot")
-
 ## Usage
+
+![CLI](https://github.com/andrei-ribeiro-wenceslau/Professional-README-Generator/blob/main/Develop/images/readme-generator.png "CLI")
 
 When you run node index.js, the application uses the inquirer package to prompt you in the command line with a series of questions about your GitHub and about your project.
 
