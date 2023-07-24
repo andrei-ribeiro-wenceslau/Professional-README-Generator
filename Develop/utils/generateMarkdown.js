@@ -78,7 +78,7 @@ ${renderLicenseSection(data.license)}
 
 ## Questions
 
-Gihub link: ${data.githubUserName}
+Gihub link: https://github.com/${data.githubUserName}
 
 Email: ${data.email}
 
