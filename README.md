@@ -16,7 +16,7 @@ The application then will generate markdown and a table of contents for the READ
 
 Finally, fs.writeFile is used to generate your project's README.md file.
 
-[Demo video link ](https://drive.google.com/file/d/1xTP510niSzsUU5U6nqq1LERP9fHYo6ln/viewLinks to an external site.)
+[Demo video link](https://drive.google.com/file/d/1xTP510niSzsUU5U6nqq1LERP9fHYo6ln/view)
 
 ## Credits
 
